@@ -32,7 +32,7 @@ class TermAccessPolicy extends AccessPolicyBase {
     $calculated_permissions = parent::calculatePermissions($account, $scope);
 
     $user = User::load($account->id());
-    $user_terms = $user->get('field_term_access')->referencedEntities();
+    $user_terms = $user->get('field_access')->referencedEntities();
     foreach ($user_terms as $user_term) {
       $calculated_permissions
         ->addItem(

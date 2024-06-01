@@ -1,0 +1,24 @@
+uuid: 420cca10-3837-406c-97e7-1f936efd99ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_extra_role
+  module:
+    - user
+id: user.user.field_extra_role
+field_name: field_extra_role
+entity_type: user
+bundle: user
+label: 'Extra role on allowed groups'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user_role'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

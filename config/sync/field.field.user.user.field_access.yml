@@ -1,0 +1,30 @@
+uuid: b7d44a4e-69c8-47c9-927c-3d3c0ec41573
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_access
+    - taxonomy.vocabulary.access
+  module:
+    - user
+id: user.user.field_access
+field_name: field_access
+entity_type: user
+bundle: user
+label: Access
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      access: access
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

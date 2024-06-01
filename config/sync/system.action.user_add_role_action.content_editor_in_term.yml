@@ -1,0 +1,14 @@
+uuid: 31c5b0d4-51df-4dae-88a7-4b04b865feec
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_editor_in_term
+  module:
+    - user
+id: user_add_role_action.content_editor_in_term
+label: 'Add the Content editor in term role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: content_editor_in_term

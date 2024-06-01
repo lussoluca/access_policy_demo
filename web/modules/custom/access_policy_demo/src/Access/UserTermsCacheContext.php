@@ -36,7 +36,7 @@ class UserTermsCacheContext implements CalculatedCacheContextInterface {
     $user = User::load($this->account->id());
     $user_terms = array_map(
       fn($loaded_term) => $loaded_term->id(),
-      $user->get('field_term_access')->referencedEntities()
+      $user->get('field_access')->referencedEntities()
     );
 
     if ($term === NULL) {

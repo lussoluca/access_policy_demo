@@ -1,0 +1,28 @@
+uuid: cb6f6f0c-409e-4d66-804e-57cb37cedbc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+    - node.type.page
+  module:
+    - node
+id: content_editor_in_term
+label: 'Content editor in term'
+weight: -7
+is_admin: null
+permissions:
+  - 'delete all revisions'
+  - 'delete any article content'
+  - 'delete any page content'
+  - 'delete article revisions'
+  - 'delete own article content'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'edit any article content'
+  - 'edit any page content'
+  - 'edit own article content'
+  - 'edit own page content'
+  - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert page revisions'

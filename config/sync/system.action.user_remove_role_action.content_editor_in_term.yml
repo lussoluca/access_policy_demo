@@ -1,0 +1,14 @@
+uuid: 5fcf10a3-b9e7-4c98-9272-7350f310f7a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_editor_in_term
+  module:
+    - user
+id: user_remove_role_action.content_editor_in_term
+label: 'Remove the Content editor in term role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: content_editor_in_term

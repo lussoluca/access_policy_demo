@@ -1,0 +1,9 @@
+uuid: ddbd0562-db12-40d4-b309-c54c141649a1
+langcode: en
+status: true
+dependencies: {  }
+name: Access
+vid: access
+description: 'Use this vocabulary to grant access to nodes'
+weight: 0
+new_revision: false
