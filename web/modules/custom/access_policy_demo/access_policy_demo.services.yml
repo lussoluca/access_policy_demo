@@ -1,0 +1,11 @@
+services:
+  access_policy_demo.access_policy.term:
+    class: Drupal\access_policy_demo\Access\TermAccessPolicy
+    tags:
+      - { name: access_policy }
+  cache_context.user.terms:
+    class: Drupal\access_policy_demo\Access\UserTermsCacheContext
+    arguments:
+      - '@current_user'
+    tags:
+      - { name: cache.context }

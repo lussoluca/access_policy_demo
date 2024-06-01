@@ -1,0 +1,5 @@
+name: 'Access Policy Demo'
+type: module
+description: 'Try to explain how the new Access Policy works'
+package: Example
+core_version_requirement: ^10 || ^11

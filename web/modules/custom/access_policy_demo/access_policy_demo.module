@@ -1,0 +1,52 @@
+<?php
+
+use Drupal\access_policy_demo\Access\TermAccessPolicy;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Access\AccessResultInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+
+function access_policy_demo_node_access(NodeInterface $node, $operation, AccountInterface $account): AccessResultInterface {
+  $access = FALSE;
+
+  if (!$node->hasField('field_term_access')) {
+    return AccessResult::allowed();
+  }
+
+  $terms = $node->get('field_term_access')->referencedEntities();
+  $type = $node->bundle();
+  foreach ($terms as $term) {
+    $item = \Drupal::service('access_policy_processor')
+      ->processAccessPolicies($account, TermAccessPolicy::SCOPE_TERM)
+      ->getItem(TermAccessPolicy::SCOPE_TERM, $term->id());
+
+    if (!$item) {
+      continue;
+    }
+
+    switch ($operation) {
+      case 'update':
+        $access = $item->hasPermission('edit any ' . $type . ' content');
+        if (!$access && $item->hasPermission('edit own ' . $type . ' content')) {
+          $access = $account->id() == $node->getOwnerId();
+        }
+        break;
+
+      case 'delete':
+        $access = $item->hasPermission('delete any ' . $type . ' content');
+        if (!$access && $item->hasPermission('delete own ' . $type . ' content')) {
+          $access = $account->id() == $node->getOwnerId();
+        }
+        break;
+
+      default:
+        $access = TRUE;
+    }
+
+    if ($access) {
+      break;
+    }
+  }
+
+  return $access ? AccessResult::allowed() : AccessResult::forbidden();
+}
