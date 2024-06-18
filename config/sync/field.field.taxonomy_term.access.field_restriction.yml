@@ -1,0 +1,21 @@
+uuid: 0b8d3029-a4e2-447b-8a58-b64a03f13a79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_restriction
+    - taxonomy.vocabulary.access
+  module:
+    - options
+id: taxonomy_term.access.field_restriction
+field_name: field_restriction
+entity_type: taxonomy_term
+bundle: access
+label: Restriction
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

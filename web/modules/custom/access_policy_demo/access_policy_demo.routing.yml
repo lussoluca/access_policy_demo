@@ -1,0 +1,7 @@
+access_policy_demo.example:
+  path: '/access-policy-demo/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\access_policy_demo\Controller\AccessPolicyDemoController'
+  requirements:
+    _permission: 'access content'

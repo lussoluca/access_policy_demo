@@ -1,0 +1,31 @@
+uuid: 8470429f-df79-47e2-b8ae-944667638616
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.access.field_restriction
+    - taxonomy.vocabulary.access
+  module:
+    - options
+    - text
+id: taxonomy_term.access.default
+targetEntityType: taxonomy_term
+bundle: access
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_restriction:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

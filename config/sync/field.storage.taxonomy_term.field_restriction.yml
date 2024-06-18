@@ -1,0 +1,27 @@
+uuid: 113b5741-27da-40ef-b5d5-3873aa3c46b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_restriction
+field_name: field_restriction
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: weekend
+      label: Weekend
+    -
+      value: weekdays
+      label: Weekdays
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
